@@ -1,0 +1,108 @@
+// Variables
+$bgColor: #a1e887;
+$gridColor: #14591d;
+$txtColor: whitesmoke;
+
+body {
+	margin: 0;
+	font-family: 'Odibee Sans', cursive;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	box-sizing: border-box;
+	letter-spacing: 0.1em;
+	background-color: $gridColor;
+	color: $txtColor;
+}
+
+// Grid
+.grid-container {
+	display: inline-grid;
+	grid-template-columns: auto auto auto;
+	padding: 10px;
+	gap: 10px;
+	background-color: $bgColor;
+	border-radius: 5px 0px 0px 5px;
+
+	.grid-items {
+		background-color: $gridColor;
+		font-weight: bolder;
+		font-size: 1.25em;
+		border: 1px solid rgba(0, 0, 0, 0.8);
+		padding: 20px;
+		text-align: center;
+		border-radius: 5px;
+	}
+
+	.grid-items:hover {
+		cursor: pointer;
+		background-color: $bgColor;
+		color: $gridColor;
+		border: 5px solid $gridColor;
+	}
+}
+
+.drum-machine h1,
+footer p {
+	text-align: center;
+	margin: 30px;
+}
+
+// Flexbox container
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	// Drum pads and display
+	.flex-items {
+		flex: none;
+		width: 250px;
+	}
+
+	@media (max-width: 700px) {
+		.flex-items {
+			flex: 50%;
+		}
+
+		.grid-container {
+			border-radius: 5px 5px 0 0;
+		}
+
+		.controls {
+			border-radius: 0 0 5px 5px;
+		}
+	}
+}
+
+// Controls and Display.
+.controls {
+	background-color: $bgColor;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0px 5px 5px 0px;
+
+	.div-display {
+		background-color: $gridColor;
+		width: 55%;
+		height: auto;
+		text-align: center;
+		padding: 10px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+	}
+}
+
+input[type='range'] {
+	width: 100%;
+	cursor: pointer;
+}
+
+footer {
+	text-align: center;
+
+	p {
+		font-size: 1.5rem;
+	}
+}
